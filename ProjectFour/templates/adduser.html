@@ -1,18 +1,16 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User Page</title>
-</head>
-<body>
-    <h1>{{ response }}</h1>
-    <h3>You will redirect in 5 seconds...</h3>
+{% extends "base.html" %}
 
-    
+{% block title %}Add user webpage{% endblock %}
+
+{% block body %}
+<h1>{{ response }}</h1>
+{% endblock %}
+
+
+{% block script%}
     <script>
         setTimeout(function () {
             window.location.href = "/";
         }, 5000); // 5 seconds
     </script>
-</body>
-</html>
+{% endblock %}
