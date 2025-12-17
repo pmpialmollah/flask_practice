@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: 26px;
+        }
+
+        .subtext {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .user-list {
+            border-top: 2px solid #667eea;
+            margin-top: 20px;
+        }
+
+        .user-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 6px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .user-row span {
+            font-size: 15px;
+        }
+
+        .index {
+            width: 40px;
+            color: #999;
+        }
+
+        .empty {
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User List</h1>
+        <div class="subtext">
+            Total users: {{ data|length }}
+        </div>
+
+        {% if data and data|length > 0 %}
+            <div class="user-list">
+                {% for user in data %}
+                    <div class="user-row">
+                        <span class="index">{{ loop.index }}.</span>
+                        <span>{{ user }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="empty">No users available.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
