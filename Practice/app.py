@@ -24,7 +24,6 @@ class User(db.Model):
 
 # ----------------------------------------
 
-
 @app.route("/")
 def home():
     return "<h1>Home Screen</h1>"
