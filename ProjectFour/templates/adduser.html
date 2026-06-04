@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Add user webpage{% endblock %}
+
+{% block body %}
+<h1>{{ response }}</h1>
+{% endblock %}
+
+
+{% block script%}
+    <script>
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 5000); // 5 seconds
+    </script>
+{% endblock %}

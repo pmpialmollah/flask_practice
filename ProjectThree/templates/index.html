@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask user app home page</title>
+</head>
+
+<body>
+    <h1>Total user: {{ len }}</h1>
+    {% if data and data|length > 0 %}
+    {% for user in data %}
+        <p>========== User id: {{ user.id }} ==========</p>
+        <p>Name: {{ user.user.getName() }}</p>
+        <p>Email: {{ user.user.getEmail() }}</p>
+        <p>Age: {{ user.user.getAge() }}</p>
+        <p>==========================</p>
+    {% endfor %}
+    {% endif %}
+</body>
+
+</html>
